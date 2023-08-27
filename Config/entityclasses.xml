@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<configs>
+		<set xpath="/entity_classes/entity_class[@name='animalStag']/drop[@name='foodRawMeat']/@name" >foodRawRedMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalDoe']/drop[@name='foodRawMeat']/@name" >foodRawRedMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalRabbit']/drop[@name='foodRawMeat']/@name" >foodRawRabbitMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalChicken']/drop[@name='foodRawMeat']/@name" >foodRawPoultryMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalBear']/drop[@name='foodRawMeat']/@name" >foodRawRedMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalZombieBear']/drop[@name='foodRawMeat']/@name" >foodRawRedMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalWolf']/drop[@name='foodRawMeat']/@name" >foodRawDogMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalDireWolf']/drop[@name='foodRawMeat']/@name" >foodRawDogMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalChickenHostile']/drop[@name='foodRawMeat']/@name" >foodRawPoultryMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalCoyote']/drop[@name='foodRawMeat']/@name" >foodRawDogMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalMountainLion']/drop[@name='foodRawMeat']/@name" >foodRawFelineMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalZombieVulture']/drop[@name='foodRawMeat']/@name" >foodRawPoultryMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalZombieVultureRadiated']/drop[@name='foodRawMeat']/@name" >foodRawPoultryMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalZombieDog']/drop[@name='foodRawMeat']/@name" >foodRawDogMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalSnake']/drop[@name='foodRawMeat']/@name" >foodRawSnakeMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalBoar']/drop[@name='foodRawMeat']/@name" >foodRawPorkMeat</set>
+		<set xpath="/entity_classes/entity_class[@name='animalBossGrace']/drop[@name='foodRawMeat']/@name" >foodRawPorkMeat</set>
+	</configs>

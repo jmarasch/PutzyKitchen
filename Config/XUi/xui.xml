@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<!-- ADD CRAFTING WINDOWS TO WORKING STATIONS -->
+	<append xpath="/xui/ruleset">
+		<!-- Working Oven -->
+		<window_group name="workstation_CookingStation" controller="XUiC_WorkstationWindowGroup" open_backpack_on_open="true" close_compass_on_open="true">
+			<window name="windowCraftingList"/>
+			<window name="craftingInfoPanel"/>
+			<window name="windowCraftingQueue"/>
+			<window name="windowToolsCookingStation" /><!--  -->
+			<window name="windowFuel" />
+			<window name="windowOutput" />
+			<window name="windowNonPagingHeader" />
+		</window_group>
+	</append>
+</configs>

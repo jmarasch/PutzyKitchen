@@ -1,0 +1,78 @@
+<!-- JumpStrength -->
+<configs>
+
+	<append xpath="/buffs">
+        <!-- *** buffSugared -->
+        <!-- TRIGGERED_BY: Items = sugaryFoods -->
+        <!-- allow you to run faster but comes with a crash afterwards. -->
+        <buff name="buffSugared" name_key="foodSugaredName" description_key="foodSugaredDesc" tooltip_key="foodSugaredTooltip" icon="foodCandyBar" icon_color="0,255,0">
+            
+            <stack_type value="replace"/>
+            <duration value="0"/>
+            <display_value value=".foodSugarDisplay"/>
+            <display_value_format value="time"/>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$foodSugarDuration" operation="subtract" value="@$MetabolismDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".foodSugarDisplay" operation="set" value="@$foodSugarDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".foodSugarDisplay" operation="divide" value="@$MetabolismDuration"/>
+            </effect_group>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffSugared">
+                    <requirement name="CVarCompare" cvar="$foodSugarDuration" operation="LTE" value="0"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".foodSugarDisplay" operation="set" value="0"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$foodSugarDuration" operation="set" value="0"/>
+
+		        <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$foodSugarCrashDuration" operation="set" value="120"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="AddBuff" buff="buffSugarCrash"/>
+            </effect_group>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffSugarCrash">
+                    <requirement name="HasBuff" buff="buffSugarCrash"/>
+                </triggered_effect>
+            </effect_group>
+
+            <effect_group>
+                <passive_effect name="RunSpeed" operation="perc_add" value="2"/>
+                <passive_effect name="JumpStrength" operation="perc_add" value="10"/>
+                <passive_effect name="WalkSpeed" operation="perc_add" value="2"/>
+                <passive_effect name="StaminaChangeOT" operation="perc_add" value="1" />
+            </effect_group>
+        </buff>
+        
+        <!-- *** buffSugarCrash -->
+        <!-- TRIGGERED_BY: BuffRemoveal = buffSugared -->
+        <!-- allow you to run faster but comes with a crash afterwards. -->
+        <buff name="buffSugarCrash" name_key="foodSugarCrash" description_key="foodSugarCrashDesc" tooltip_key="foodSugarCrashTooltip" icon="foodCandyBar" icon_color="255,0,0">
+            
+            <stack_type value="replace"/>
+            <duration value="0"/>
+            <display_value value=".foodSugarCrashDisplay"/>
+            <display_value_format value="time"/>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffStatusSurgarCrashBlockage" operation="set" value="100"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffStatusSurgarCrashBlockage" operation="add" value="@$PlayerLevelBonus"/>
+                <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$buffStatusSurgarCrashBlockage" operation="multiply" value=".25"/>
+                <passive_effect name="StaminaMaxBlockage" operation="base_add" value="@$buffStatusSurgarCrashBlockage"/>
+            </effect_group>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar="$foodSugarCrashDuration" operation="subtract" value="@$MetabolismDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".foodSugarCrashDisplay" operation="set" value="@$foodSugarCrashDuration"/>
+                <triggered_effect trigger="onSelfBuffUpdate" action="ModifyCVar" cvar=".foodSugarCrashDisplay" operation="divide" value="@$MetabolismDuration"/>
+            </effect_group>
+
+            <effect_group>
+                <triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" buff="buffSugarCrash">
+                    <requirement name="CVarCompare" cvar="$foodSugarCrashDuration" operation="LTE" value="0"/>
+                </triggered_effect>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar=".foodSugarCrashDisplay" operation="set" value="0"/>
+                <triggered_effect trigger="onSelfBuffRemove" action="ModifyCVar" cvar="$foodSugarCrashDuration" operation="set" value="0"/>
+            </effect_group>
+        </buff>
+    </append>
+</configs>

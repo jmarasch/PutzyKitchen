@@ -1,0 +1,62 @@
+ Key,File,Type,UsedInMainMenu,NoTranslate,english
+BrickOven,blocks,Container,,,Brick Oven
+BrickOvenDescription,blocks,Workstation,,,Useful for baked goods.\n\nRepair with Cobble Stone and Metal Pipe.
+ClayBowlEmpty,items,Food,,,Clay Bowl
+foodMilledFlour,items,Food,,,Flour
+foodMilledFlourDescription,items,Food,,,Milled flour ready for cooking.
+foodRawDogMeat,items,Food,,,Raw Dog Meat
+foodRawDogMeatDescription,items,Food,,,Where do you draw the line on friend and food?
+foodRawFelineMeat,items,Food,,,Raw Feline Meat
+foodRawFelineMeatDescription,items,Food,,,Meow meow meow meow meow meow meow meow meow *meow mix song
+foodRawGroundDogMeat,items,Food,,,Ground Raw Dog Meat
+foodRawGroundDogMeatDescription,items,Food,,,Again, friends aren’t food, whats wrong with you?
+foodRawGroundFelineMeat,items,Food,,,Ground Raw Feline Meat
+foodRawGroundFelineMeatDescription,items,Food,,,*happly singing, "You put the kitty in the grinder and crank her all up…"
+foodRawGroundPorkMeat,items,Food,,,Ground Raw Pork Meat
+foodRawGroundPorkMeatDescription,items,Food,,,Ground pork…. Saussage any one?
+foodRawGroundPoultryMeat,items,Food,,,Ground Raw Poultry Meat
+foodRawGroundPoultryMeatDescription,items,Food,,,Mostly white meat, I think…
+foodRawGroundRabbitMeat,items,Food,,,Ground Raw Rabbit Meat
+foodRawGroundRabbitMeatDescription,items,Food,,,Here comes Peater Cotton Tail grinding down the bunny trail...
+foodRawGroundRedMeat,items,Food,,,Ground Raw Red Meat
+foodRawGroundRedMeatDescription,items,Food,,,Good for canibal sandwiches, wouldn’t eat too many however.
+foodRawGroundSnakeMeat,items,Food,,,Ground Raw Snake Meat
+foodRawGroundSnakeMeatDescription,items,Food,,,Could make a good hotdog.
+foodRawPorkMeat,items,Food,,,Raw Pork Meat
+foodRawPorkMeatDescription,items,Food,,,Pork Pork Pork
+foodRawPoultryMeat,items,Food,,,Raw Poultry Meat
+foodRawPoultryMeatDescription,items,Food,,,Chicken buck buck
+foodRawRabbitMeat,items,Food,,,Raw Rabbit Meat
+foodRawRabbitMeatDescription,items,Food,,,its still twiching…
+foodRawRedMeat,items,Food,,,Raw Red Meat
+foodRawRedMeatDescription,items,Food,,,Stabbed slabbed and ready for the fire!
+foodRawSnakeMeat,items,Food,,,Raw Snake Meat
+foodRawSnakeMeatDescription,items,Food,,,Yeah, not looking forward to this one.
+toolPizzaPeel,items,tool,,,Pizza Peel
+toolPizzaPeelDescription,items,tool,,,Use in a piping hot Brick Oven to take out the slop you've been cooking.
+toolMeatGrinder,items,tool,,,Meat Grinder
+toolMeatGrinderDescription,items,tool,,,Are you grinding friend or foe?
+foodRawGroundRottenMeat,items,Food,,,Rotten Ground Meat
+foodRawGroundRottenMeatDescription,items,Food,,,Deffinatly past its prime, please don’t, *gags* for the love of god *gags*
+toolRollingPin,items,tool,,,Rolling Pin
+toolFlatIron,items,tool,,,Flat Iron
+toolBakingSheet,items,tool,,,Baking Sheet
+toolBakingPan,items,tool,,,Baking Pan
+toolMuffinPan,items,tool,,,Muffin Pan
+toolPieTin,items,tool,,,Pie Tin
+toolRollingPinDescription,items,tool,,,
+toolFlatIronDescription,items,tool,,,
+toolBakingSheetDescription,items,tool,,,
+toolBakingPanDescription,items,tool,,,
+toolMuffinPanDescription,items,tool,,,
+toolPieTinDescription,items,tool,,,
+foodSugar,items,Food,,,Sugar
+foodSugarDescription,items,Food,,,Cook with it or eat it straight, gives a boost of speed for a while but will cost you later
+workstationsT1-3,progression,Attribute,,,
+workstationsT1-4,progression,Attribute,,,
+foodSugaredName,buffs,Buff,,,Sugar High
+foodSugaredDesc,buffs,Buff,,,Gives you a burst of energy but a crash afterwards
+foodSugaredTooltip,buffs,Buff,,,You are running on pure KidCrack and getting an energy boost
+foodSugarCrash,buffs,Buff,,,Sugar Crash
+foodSugarCrashDesc,buffs,Buff,,,wears off eventually, hopefully and you get back to right
+foodSugarCrashTooltip,buffs,Buff,,,Max staminia reduced

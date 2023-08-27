@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+
+	<!-- ADD CRAFTING DISPLAY TO WORKING OVENS, GRILLS, STOVES, AND CHEM SETS -->
+	
+	<append xpath="/ui_display_info/crafting_category_display">
+
+		<!-- Cooking Station -->
+		<crafting_category_list display_type="CookingStation">
+			<crafting_category name="CFFood/Cooking" icon="ui_game_symbol_fork" display_name="lblCategoryFood" />
+		</crafting_category_list>
+		
+		
+    </append>
+	
+</configs>

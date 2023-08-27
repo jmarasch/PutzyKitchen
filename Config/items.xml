@@ -1,0 +1,524 @@
+
+<configs>
+
+    <append xpath="/items">
+        <!-- Start New Tools -->
+        <item name="toolPizzaPeel">
+            <property name="Tags" value="medium,tool,longShaft,workstationSkill" />
+            <property name="DisplayType" value="melee" />
+            <property name="UnlockedBy" value="craftingWorkstations"/>
+
+            <property name="HoldType" value="18" />
+            <property name="Meshfile" value="#@modfolder:Resources/PutzyKitchen.unity3d?PizzaPeelPrefab.prefab" />
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+s
+            <property name="DescriptionKey" value="toolPizzaPeelDescription" />
+            <property name="CreativeMode" value="Player" />
+
+            <property name="RepairTools" value="resourceWood" />
+            <property name="SoundDestroy" value="wooddestroy1" />
+            <property name="ShowQuality" value="false" />
+            <property name="SoundUnholster" value="weapon_unholster" />
+            <property name="SoundHolster" value="weapon_holster" />
+
+            <property name="Material" value="Mwood" />
+            <property name="Stacknumber" value="5" /> <!-- STK loot -->
+            <property name="EconomicValue" value="200" />
+            <property name="EconomicSellScale" value=".1" />
+            <property name="Group" value="Tools/Traps,Food/Cooking" />
+            <property name="ItemTypeIcon" value="campfire" />
+            <property name="CustomIcon" value="PizzaPeelIcon" />
+
+            <property class="Action0">
+                <property name="Class" value="DynamicMelee"/>
+                <property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+                <property name="Sound_start" value="shovel_stone_swinglight"/>
+                <property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+            </property>
+            <property class="Action1">
+                <property name="Class" value="DynamicMelee"/>
+                <property name="Sphere" value=".15"/>   <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+                <property name="Sound_start" value="shovel_stone_swinglight"/>
+                <property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+                <property name="UsePowerAttackAnimation" value="true"/>
+            </property>
+            <effect_group name="meleeToolShovelT0StoneShovel">
+                <passive_effect name="AttacksPerMinute" operation="base_set" value="50" tags="perkMiner69r"/>
+                <passive_effect name="StaminaLoss" operation="base_set" value="16.2" tags="primary"/>
+                <passive_effect name="DegradationMax" operation="base_set" value="75,200" tier="1,6" tags="perkMiner69r"/>
+                <passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="perkMiner69r"/>
+                <passive_effect name="MaxRange" operation="base_set" value="2.6" tags="perkMiner69r"/>
+                <passive_effect name="BlockRange" operation="base_set" value="3.5" tags="perkMiner69r"/>
+                <passive_effect name="ModSlots" operation="base_set" value="1,1,1,2,2,3" tier="1,2,3,4,5,6"/>
+                <passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
+                <passive_effect name="ModPowerBonus" operation="base_add" value="300" tags="EconomicValue"/>
+                <passive_effect name="EntityDamage" operation="base_set" value="9" tags="perkMiner69r"/>
+                <passive_effect name="EntityDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
+                <passive_effect name="BlockDamage" operation="base_set" value="38" tags="perkMiner69r"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6" tags="perkMiner69r"/> <!-- tier bonus -->
+                <passive_effect name="DamageModifier" operation="perc_add" value="-.7" tags="wood"/>
+                <passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="stone"/>
+                <passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="metal"/>
+            </effect_group>
+            <effect_group name="Power Attack">
+                <passive_effect name="EntityDamage" operation="perc_add" value="1.25" tags="secondary"/>
+                <passive_effect name="BlockDamage" operation="perc_add" value="1.25" tags="secondary"/>
+                <!-- <passive_effect name="AttacksPerMinute" operation="perc_add" value="-.3" tags="secondary"/> -->
+                <passive_effect name="StaminaLoss" operation="base_set" value="32.5" tags="secondary"/>
+            </effect_group>
+        </item>
+
+        <item name="toolMeatGrinder">
+            <property name="Tags" value="tool,workstationSkill" />
+            <property name="HoldType" value="31" />
+            <property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab" />
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+            <property name="Material" value="Mmetal" />
+            <property name="EconomicValue" value="60" />
+            <property name="Stacknumber" value="1" />
+            <property name="Group" value="Food/Cooking,CFFood/Cooking" />
+            <property name="EconomicValue" value="250" />
+            <property name="ItemTypeIcon" value="campfire" />
+            <property name="CustomIcon" value="MeatGrinderIcon" />
+            <property name="DescriptionKey" value="toolMeatGrinderDescription" />
+            <property name="UnlockedBy" value="craftingWorkstations"/>
+        </item>
+
+        <item name="toolRollingPin">
+            <property name="Tags" value="tool,workstationSkill" />
+            <property name="HoldType" value="31" />
+            <property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab" />
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+            <property name="Material" value="Mmetal" />
+            <property name="EconomicValue" value="60" />
+            <property name="Stacknumber" value="1" />
+            <property name="Group" value="Food/Cooking,CFFood/Cooking" />
+            <property name="EconomicValue" value="250" />
+            <property name="ItemTypeIcon" value="campfire" />
+            <property name="CustomIcon" value="RollingPinIcon" />
+            <property name="DescriptionKey" value="toolMeatGrinderDescription" />
+            <property name="UnlockedBy" value="craftingWorkstations"/>
+        </item>
+
+        <item name="toolFlatIron">
+            <property name="Tags" value="tool,workstationSkill" />
+            <property name="HoldType" value="31" />
+            <property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab" />
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+            <property name="Material" value="Mmetal" />
+            <property name="EconomicValue" value="60" />
+            <property name="Stacknumber" value="1" />
+            <property name="Group" value="Food/Cooking,CFFood/Cooking" />
+            <property name="EconomicValue" value="250" />
+            <property name="ItemTypeIcon" value="campfire" />
+            <property name="CustomIcon" value="GriddlePanIcon" />
+            <property name="DescriptionKey" value="toolMeatGrinderDescription" />
+            <property name="UnlockedBy" value="craftingWorkstations"/>
+        </item>
+
+        <item name="toolBakingSheet">
+            <property name="Tags" value="tool,workstationSkill" />
+            <property name="HoldType" value="31" />
+            <property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab" />
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+            <property name="Material" value="Mmetal" />
+            <property name="EconomicValue" value="60" />
+            <property name="Stacknumber" value="1" />
+            <property name="Group" value="Food/Cooking,CFFood/Cooking" />
+            <property name="EconomicValue" value="250" />
+            <property name="ItemTypeIcon" value="campfire" />
+            <property name="CustomIcon" value="BakingSheetIcon" />
+            <property name="DescriptionKey" value="toolMeatGrinderDescription" />
+            <property name="UnlockedBy" value="craftingWorkstations"/>
+        </item>
+        
+        <item name="toolBakingPan">
+            <property name="Tags" value="tool,workstationSkill" />
+            <property name="HoldType" value="31" />
+            <property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab" />
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+            <property name="Material" value="Mmetal" />
+            <property name="EconomicValue" value="60" />
+            <property name="Stacknumber" value="1" />
+            <property name="Group" value="Food/Cooking,CFFood/Cooking" />
+            <property name="EconomicValue" value="250" />
+            <property name="ItemTypeIcon" value="campfire" />
+            <property name="CustomIcon" value="LoafPanIcon" />
+            <property name="DescriptionKey" value="toolMeatGrinderDescription" />
+            <property name="UnlockedBy" value="craftingWorkstations"/>
+        </item>
+        
+        <item name="toolMuffinPan">
+            <property name="Tags" value="tool,workstationSkill" />
+            <property name="HoldType" value="31" />
+            <property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab" />
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+            <property name="Material" value="Mmetal" />
+            <property name="EconomicValue" value="60" />
+            <property name="Stacknumber" value="1" />
+            <property name="Group" value="Food/Cooking,CFFood/Cooking" />
+            <property name="EconomicValue" value="250" />
+            <property name="ItemTypeIcon" value="campfire" />
+            <property name="CustomIcon" value="MuffinPanIcon" />
+            <property name="DescriptionKey" value="toolMeatGrinderDescription" />
+            <property name="UnlockedBy" value="craftingWorkstations"/>
+        </item>
+        
+        <item name="toolPieTin">
+            <property name="Tags" value="tool,workstationSkill" />
+            <property name="HoldType" value="31" />
+            <property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab" />
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+            <property name="Material" value="Mmetal" />
+            <property name="EconomicValue" value="60" />
+            <property name="Stacknumber" value="1" />
+            <property name="Group" value="Food/Cooking,CFFood/Cooking" />
+            <property name="EconomicValue" value="250" />
+            <property name="ItemTypeIcon" value="campfire" />
+            <property name="CustomIcon" value="PiePanIcon" />
+            <property name="DescriptionKey" value="toolMeatGrinderDescription" />
+            <property name="UnlockedBy" value="craftingWorkstations"/>
+        </item>
+        <!-- End New Tools -->
+
+        <!-- Start New Meats -->
+        <item name="foodBase">
+            <property name="Tags" value="food,dumpsterFood,foodSkill" />
+            <property name="HoldType" value="31" />
+            <property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab" />
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+            <property name="Group" value="Food/Cooking,CFFood/Cooking,Resources" />
+            <property name="Material" value="MfoodRaw" />
+
+            <property class="Action0">
+                <property name="Class" value="Eat" />
+                <property name="Delay" value="1.0" />
+                <property name="Sound_start" value="player_eating" />
+            </property>
+        </item>
+
+        <item name="foodRawRedMeat">
+            <property name="Extends" value="foodBase" />
+            <property name="DisplayType" value="foodRaw" />
+            <property name="Material" value="MfoodRawMeat" />
+            <property name="Stacknumber" value="200" />
+            <property name="CustomIcon" value="foodRawRedMeatIcon" />
+            <property name="EconomicValue" value="20" />
+            <property name="CraftingIngredientTime" value="3" />
+            <property name="DescriptionKey" value="foodRawRedMeatDescription" />
+            <property name="Smell" value="ExLargeSmell" />
+
+            <effect_group tiered="false" name="Food Tier 0">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="5" />
+                <display_value name="dDysenteryRisk" value=".05" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll" />
+                </triggered_effect>
+            </effect_group>
+        </item>
+
+        <item name="foodRawGroundRedMeat">
+            <property name="Extends" value="foodRawRedMeat" />
+            <property name="CustomIcon" value="GroundMeat2Icon" />
+            <property name="CraftingIngredientTime" value="2" />
+            <property name="EconomicValue" value="20" />
+            <property name="DescriptionKey" value="foodRawGroundRedMeatDescription" />
+        </item>
+
+        <item name="foodRawPoultryMeat" >
+            <property name="Extends" value="foodRawRedMeat" />
+            <property name="CustomIcon" value="foodRawPoultryMeatIcon" />
+            <property name="DescriptionKey" value="foodRawPoultryMeatDescription" />
+
+            <effect_group tiered="false" name="Food Tier 0">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="2" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-1" />
+                <display_value name="foodHealthAmount" value="-1" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="-1" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12" />
+                <display_value name="dDysenteryRisk" value=".12" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll" />
+                </triggered_effect>
+            </effect_group>
+        </item>
+
+        <item name="foodRawGroundPoultryMeat">
+            <property name="Extends" value="foodRawPoultryMeat" />
+            <property name="CustomIcon" value="GroundMeat1Icon" />
+            <property name="CraftingIngredientTime" value="2" />
+            <property name="EconomicValue" value="20" />
+            <property name="DescriptionKey" value="foodRawGroundPoultryMeatDescription" />
+        </item>
+
+        <item name="foodRawPorkMeat">
+            <property name="Extends" value="foodRawRedMeat" />
+            <property name="CustomIcon" value="foodRawPorkMeatIcon" />
+            <property name="DescriptionKey" value="foodRawPorkMeatDescription" />
+
+            <effect_group tiered="false" name="Food Tier 0">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="2" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-1" />
+                <display_value name="foodHealthAmount" value="-1" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="-1" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="12" />
+                <display_value name="dDysenteryRisk" value=".12" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll" />
+                </triggered_effect>
+            </effect_group>
+        </item>
+
+        <item name="foodRawGroundPorkMeat">
+            <property name="Extends" value="foodRawPorkMeat" />
+            <property name="CustomIcon" value="GroundMeat3Icon" />
+            <property name="CraftingIngredientTime" value="2" />
+            <property name="EconomicValue" value="20" />
+            <property name="DescriptionKey" value="foodRawGroundPorkMeatDescription" />
+        </item>
+
+        <item name="foodRawSnakeMeat">
+            <property name="Extends" value="foodRawRedMeat" />
+            <property name="CustomIcon" value="foodRawSnakeMeatIcon" />
+            <property name="DescriptionKey" value="foodRawSnakeMeatDescription" />
+
+            <effect_group tiered="false" name="Food Tier 0">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="2" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-2" />
+                <display_value name="foodHealthAmount" value="-2" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="-2" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20" />
+                <display_value name="dDysenteryRisk" value=".20" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll" />
+                </triggered_effect>
+            </effect_group>
+        </item>
+        <item name="foodRawGroundSnakeMeat">
+            <property name="Extends" value="foodRawSnakeMeat" />
+            <property name="CustomIcon" value="GroundMeat4Icon" />
+            <property name="CraftingIngredientTime" value="2" />
+            <property name="EconomicValue" value="20" />
+            <property name="DescriptionKey" value="foodRawGroundSnakeMeatDescription" />
+        </item>
+
+        <item name="foodRawDogMeat">
+            <property name="Extends" value="foodRawRedMeat" />
+            <property name="CustomIcon" value="foodRawDogMeatIcon" />
+            <property name="DescriptionKey" value="foodRawDogMeatDescription" />
+            
+            <effect_group tiered="false" name="Food Tier 0">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-5" />
+                <display_value name="foodHealthAmount" value="-5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="-5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20" />
+                <display_value name="dDysenteryRisk" value=".20" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll" />
+                </triggered_effect>
+            </effect_group>
+        </item>
+        <item name="foodRawGroundDogMeat">
+            <property name="Extends" value="foodRawDogMeat" />
+            <property name="CustomIcon" value="GroundMeat5Icon" />
+            <property name="CraftingIngredientTime" value="2" />
+            <property name="EconomicValue" value="20" />
+            <property name="DescriptionKey" value="foodRawGroundDogMeatDescription" />
+        </item>
+
+        <item name="foodRawFelineMeat">
+            <property name="Extends" value="foodRawRedMeat" />
+            <property name="CustomIcon" value="foodRawFelineMeatIcon" />
+            <property name="DescriptionKey" value="foodRawFelineMeatDescription" />
+
+            <effect_group tiered="false" name="Food Tier 0">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-5" />
+                <display_value name="foodHealthAmount" value="-5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="-5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20" />
+                <display_value name="dDysenteryRisk" value=".20" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll" />
+                </triggered_effect>
+            </effect_group>
+        </item>
+        <item name="foodRawGroundFelineMeat">
+            <property name="Extends" value="foodRawFelineMeat" />
+            <property name="CustomIcon" value="GroundMeat6Icon" />
+            <property name="CraftingIngredientTime" value="2" />
+            <property name="EconomicValue" value="20" />
+            <property name="DescriptionKey" value="foodRawGroundFelineMeatDescription" />
+        </item>
+
+        <item name="foodRawRabbitMeat">
+            <property name="Extends" value="foodRawRedMeat" />
+            <property name="CustomIcon" value="foodRawRabbitMeatIcon" />
+            <property name="DescriptionKey" value="foodRawRabbitMeatDescription" />
+
+            <effect_group tiered="false" name="Food Tier 0">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyStats" stat="Health" operation="add" value="-5" />
+                <display_value name="foodHealthAmount" value="-5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="-5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="20" />
+                <display_value name="dDysenteryRisk" value=".20" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll" />
+                </triggered_effect>
+            </effect_group>
+        </item>
+        <item name="foodRawGroundRabbitMeat">
+            <property name="Extends" value="foodRawRabbitMeat" />
+            <property name="CustomIcon" value="GroundMeat7Icon" />
+            <property name="CraftingIngredientTime" value="2" />
+            <property name="EconomicValue" value="20" />
+            <property name="DescriptionKey" value="foodRawGroundRabbitMeatDescription" />
+        </item>
+
+        <item name="foodRawGroundRottenMeat">
+            <property name="Extends" value="foodRottingFlesh" />
+            <property name="CustomIcon" value="GroundMeat8Icon" />
+            <property name="CraftingIngredientTime" value="2" />
+            <property name="EconomicValue" value="20" />
+            <property name="DescriptionKey" value="foodRawGroundRottenMeatDescription" />
+        </item>
+        <!-- End New Meats -->
+
+        <!-- Start New Cookwear -->
+        <item name="ClayBowlEmpty">
+            <property name="HoldType" value="31" />
+            <property name="Meshfile" value="@:Other/Items/Misc/parcelPrefab.prefab" />
+            <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
+            <property name="Material" value="MresourceClayLump" />
+            <property name="Stacknumber" value="25" />
+            <property name="Weight" value="5" />
+            <property name="EconomicValue" value="10" />
+            <property name="CraftingIngredientTime" value="9" />
+            <property name="Group" value="Resources" />
+            <property name="CustomIcon" value="ClayBowl4Icon" />
+            <property name="DescriptionKey" value="ClayBowlEmptyDescription" />
+        </item>
+        <!-- End New Cookwear -->
+
+        <!-- Start New Food Resources -->
+        <item name="resourceWheetTop">
+            <property name="Extends" value="foodBase" />
+            <property name="DisplayType" value="foodRaw" />
+            <property name="Material" value="MresourceCrop" />
+            <property name="Stacknumber" value="1000" />
+            <property name="CustomIcon" value="resourceWheatTops" />
+            <property name="DescriptionKey" value="foodMilledFlourDescription" />
+            <property name="EconomicValue" value="5" />
+            <property name="CraftingIngredientTime" value="1" />
+
+            <effect_group tiered="false">
+		        <display_value name="$waterAmountAdd" value="-20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="10" />
+                <display_value name="dDysenteryRisk" value=".10" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll" />
+                </triggered_effect>
+            </effect_group>
+        </item>
+        <!-- End New Food Resources -->
+
+        <!-- Start New Food Ingredients -->
+
+
+        <item name="foodMilledFlour">
+            <property name="Extends" value="foodBase" />
+            <property name="DisplayType" value="foodRaw" />
+            <property name="Material" value="MresourceCrop" />
+            <property name="Stacknumber" value="250" />
+            <property name="CustomIcon" value="SackOfFlourIcon" />
+            <property name="DescriptionKey" value="foodMilledFlourDescription" />
+            <property name="EconomicValue" value="5" />
+            <property name="CraftingIngredientTime" value="1" />
+
+            <effect_group tiered="false">
+		        <display_value name="$waterAmountAdd" value="-20"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="set" value="10" />
+                <display_value name="dDysenteryRisk" value=".10" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".DiseaseRoll" operation="add" value="@$MetabolismResist" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffDysenteryCatchFood">
+                    <requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="@.DiseaseRoll" />
+                </triggered_effect>
+            </effect_group>
+        </item>
+
+        <item name="foodSugar">
+            <property name="Extends" value="foodBase" />
+            <property name="DisplayType" value="foodRaw" />
+            <property name="Material" value="MfoodSugar" />
+            <property name="Stacknumber" value="250" />
+            <property name="CustomIcon" value="SugarBagIcon" />
+            <property name="DescriptionKey" value="foodSugarDescription" />
+            <property name="EconomicValue" value="5" />
+            <property name="CraftingIngredientTime" value="1" />
+
+            <effect_group tiered="false">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables" />
+            </effect_group>
+
+            <effect_group tiered="false">
+                <display_value name="dDuration" value="720"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodSugarDuration" operation="add" value="120"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodSugarDuration" operation="set" value="300">
+                    <requirement name="CVarCompare" cvar="$foodSugarDuration" operation="GT" value="300"/></triggered_effect>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffSugared"/>
+            </effect_group>
+        </item>
+        <!-- End New Food Ingredients -->
+
+        <!-- Start New Cooked Food -->
+        <item name="foodBurgerPattie">
+            <property name="Extends" value="foodBase" />
+            <property name="DisplayType" value="foodRaw" />
+            <property name="Stacknumber" value="16" />
+            <property name="CustomIcon" value="SugarBagIcon" />
+            <property name="DescriptionKey" value="foodSugarDescription" />
+            <property name="EconomicValue" value="5" />
+            <property name="CraftingIngredientTime" value="1" />
+
+            <effect_group tiered="false">
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar=".foodStaminaBonusAdd" operation="add" value="5" />
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables" />
+            </effect_group>
+
+            <effect_group tiered="false">
+                <display_value name="dDuration" value="720"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodSugarDuration" operation="add" value="120"/>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodSugarDuration" operation="set" value="300">
+                    <requirement name="CVarCompare" cvar="$foodSugarDuration" operation="GT" value="300"/></triggered_effect>
+                <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffSugared"/>
+            </effect_group>
+        </item>
+        <!-- End New Cooked Food -->
+    </append>
+</configs>

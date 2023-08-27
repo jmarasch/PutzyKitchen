@@ -1,0 +1,394 @@
+<config>
+	<!--  count="1,5" loot_prob_template="" prob="0.05" -->
+	<append xpath="/lootcontainers/lootgroup[@name='rareFoodDrink']">
+	</append>
+
+	<!-- *** Canned_Food -->
+	<append xpath="/lootcontainers/lootgroup[@name='cannedfood']">
+	</append>
+
+	<!-- *** Master_Chef_Dumpster_Food -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupDumpsterFood']">
+		<item name="foodSugar"/>
+		<item name="foodMilledFlour" count="3,10"/>
+		
+	</append>
+
+	<!-- *** Candy -->
+	<append xpath="/lootcontainers/lootgroup[@name='foodCandy']">
+		<item name="foodSugar" prob="0.10"/>
+	</append>
+
+	<!-- *** Seeds -->
+	<append xpath="/lootcontainers/lootgroup[@name='seeds']">
+	</append>
+
+	<!-- *** Seeds_No_Flowers -->
+	<append xpath="/lootcontainers/lootgroup[@name='seedsNoFlowers']">
+	</append>
+
+	<!-- *** Drinks -->
+	<!-- <append xpath="/lootcontainers/lootgroup[@name='drinks']"> -->
+	<!-- </append> -->
+
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestT2Food']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestT3Food']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupQuestT4Food']">
+	</append>
+
+	<!-- *** A20_Food_and_Health_Groups -->
+
+	<!-- *** A20_Food_Trash -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodTrashCommon']">
+		<item name="foodMilledFlour" count="1,3"/>
+		<item name="foodSugar"/>
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodTrashUncommon']">
+		<item name="foodMilledFlour" count="1,3"/>
+	</append>
+
+	<!-- *** A20_Cooking_Tools_Groups -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupCookingTools']">
+	<!-- <item name="toolBeaker" loot_prob_template="low"/> -->
+	<item name="toolPizzaPeel"/>
+	<item name="toolMeatGrinder"/>
+	<item name="toolRollingPin"/>
+	<item name="toolFlatIron"/>
+	<item name="toolBakingSheet"/>
+	<item name="toolBakingPan"/>
+	<item name="toolMuffinPan"/>
+	<item name="toolPieTin"/>
+	</append>
+
+	<!-- *** A20_Food_Ingredients_Groups -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupIngredientsCommon']">
+		<item name="foodMilledFlour" count="1,3"/>
+		<item name="foodSugar"/>
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupIngredientsUncommon']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupIngredientsRare']">
+	</append>
+
+	<!-- *** A20_Food_Groups -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodCommon']">
+		<item name="foodMilledFlour" count="1,3"/>
+		<item name="foodSugar"/>
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodPileCommon']">
+		<item name="foodMilledFlour"/>
+		<item name="foodSugar"/>
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodUncommon']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodRare']">
+	</append>
+
+	<!-- *** A20_Drink_Groups -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupDrinksCommon']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupDrinksUncommon']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupDrinksRare']">
+	</append>
+
+<!--  -->
+<!-- this starts the group box section -->
+<!--  -->
+<!--  -->
+	<!-- *** A20_Small_Food_Pile_Groups -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodSmall01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupDrinksSmall01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupIngredientsSmall01']">
+	</append>
+
+	<!-- *** A20_Med_Food_Pile_Groups -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodMed01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupDrinksMed01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupIngredientsMed01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupIngredientsMed02']">
+	</append>
+
+	<!-- *** A20_Large_Food_Pile_Groups -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodLarge01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupDrinksLarge01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodLarge02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupDrinksLarge02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupIngredientsLarge01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupIngredientsLarge02']">
+	</append>
+
+	<!-- *** Cupboard_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupCupboard01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupCupboard02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupCupboard']">
+	</append>
+
+	<!-- *** Microwave_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupMicrowave01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupMicrowave02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupMicrowave']">
+	</append>
+
+	<!-- *** Refrigerator_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupRefrigerator01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupRefrigerator02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupRefrigerator']">
+	</append>
+
+	<!-- *** BeerCooler_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupBeerCooler01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupBeerCooler']">
+	</append>
+
+	<!-- *** CoffeeMaker_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupCoffeeMaker01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupCoffeeMaker']">
+	</append>
+
+	<!-- *** SodaFountain_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupSodaFountain01']">
+		<item name="foodSugar"/>
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupSodaFountain']">
+	</append>
+
+	<!-- *** ShoppingCart_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupShoppingCart01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupShoppingCart02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupShoppingCart']">
+	</append>
+
+	<!-- *** ShamwayShelves_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayShelves01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayShelves02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayShelves']">
+	</append>
+
+	<!-- *** Buried_Supplies_T1 -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupBuriedSuppliesT1_01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupBuriedSuppliesT1_02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupBuriedSuppliesT1_03']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupBuriedSuppliesT1']">
+	</append>
+
+	<!-- *** ShamwayProduce_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayProduce01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayProduce']">
+	</append>
+
+	<!-- *** ShamwayFreezer_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayFreezer01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayFreezer']">
+	</append>
+
+	<!-- *** ShamwayCooler_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayCooler01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayCooler']">
+	</append>
+
+	<!-- *** Pig_Trough -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupPigTrough01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupPigTrough']">
+	</append>
+
+	<!-- *** FOOD -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodPileSmall']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodPileMed']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupFoodPileLarge']">
+	</append>
+
+
+	<!-- *** Liquor_Piles -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupLiquorSmall01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupLiquorMed01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupLiquorLarge01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupLiquorBonus']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupLiquorPileSmall']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupLiquorPileMed']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupLiquorPileLarge']">
+	</append>
+
+
+	<!-- *** Sinks -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupSinks01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupSinks02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupSinks03']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupSinks']">
+	</append>
+
+
+	<!-- *** Dishwasher_Junk -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupDishwasherJunk']">
+	</append>
+
+
+	<!-- *** Super_Corn_Footlocker -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupSuperCornFootlocker']">
+	</append>
+
+	<!-- *** Car_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupCars01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupCars02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupCars03']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupCars']">
+	</append>
+
+
+	<!-- *** Shamway_Crate -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayCrate01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayCrate02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayCrate03']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayCrate04']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupShamwayCrate']">
+	</append>
+
+
+	<!-- *** Cooler_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupCooler01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupCooler02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupCooler']">
+	</append>
+
+	<!-- *** Oven_Loot -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupOven01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupOven02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupOven']">
+	</append>
+
+	<!-- *** Hidden_Stash -->
+	<append xpath="/lootcontainers/lootgroup[@name='groupHiddenStash01']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupHiddenStash02']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='groupHiddenStash']">
+	</append>
+
+	<!-- *** Airdrop_Food -->
+	<append xpath="/lootcontainers/lootgroup[@name='airdropfood']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='airdropdrink']">
+	</append>
+
+	<append xpath="/lootcontainers/lootgroup[@name='airdropfooddrink']">
+	</append>
+</config>

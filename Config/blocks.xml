@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+
+	<append xpath="/blocks">
+
+		<!-- CRAFTABLE WORKING OVENS AND GRILLS -->
+		<!-- *** WOOD BURNING STOVE WORKING -->
+
+		<block name="CookingStation">
+			<!-- Class -->
+			<property name="Class" value="Workstation"/>
+			<property class="Workstation">
+				<property name="Modules" value="tools,output,fuel,input"/>
+				<property name="Collide" value="melee,bullet,arrow,rocket"/>
+				<property name="CraftingAreaRecipes" value="brickoven"/> 
+			</property>
+			<property name="UnlockedBy" value="craftingWorkstations"/>
+			<!-- UI_Info -->
+			<property name="CreativeMode" value="Player"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="CustomIcon" value="CookingStationIcon"/>
+			<property name="DescriptionKey" value="CookingStationDescription"/>
+			<property name="WorkstationIcon" value="ui_game_symbol_campfire"/>
+			<property name="WorkstationJournalTip" value="heatMapTip"/>
+			<property name="CraftIcon" value="ui_game_symbol_spatula"/>
+			<property name="CraftActionName" value="lblContextActionCook"/>
+			<property name="Stacknumber" value="1"/>
+			<!-- Visual -->
+			<property name="Material" value="Mbrick"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?CookingStationPrefab.prefab"/>
+			<property name="MultiBlockDim" value="3,2,1"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="WaterFlow" value="permitted"/>
+			<!-- <property name="ParticleName" value="fire_small"/> -->
+			<property name="ParticleName" value="forgeWorkstation"/>
+			<property name="ParticleOffset" value="0.0,0.0,0.0"/>
+			<!-- Placement -->
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="Path" value="solid"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="CanPickup" value="true" param1="BrickOven"/>
+			<!-- Value -->
+			<property name="Weight" value="0"/>
+			<property name="EconomicValue" value="500"/>
+			<property name="EconomicBundleSize" value="1"/>
+			<property name="SellableToTrader" value="false"/>
+			<property name="TraderStageTemplate" value="midTier1"/>
+			<!-- Interaction -->
+			<property name="MaxDamage" value="800"/>
+			<property name="HeatMapStrength" value="5"/>
+			<property name="HeatMapTime" value="5000"/>
+			<property name="HeatMapFrequency" value="1000"/>
+			<!-- <property name="BuffsWhenWalkedOn" value="buffBurningEnvironment"/> -->
+			<property name="ActiveRadiusEffects" value="buffCampfireAOE(8)"/>
+			<property name="OpenSound" value="door_metal_open"/>
+			<property name="CloseSound" value="door_metal_close"/>
+			<property name="CraftSound" value="campfire_cook_click"/>
+			<property name="CraftCompleteSound" value="campfire_complete_item"/>
+			<property class="RepairItems">
+				<property name="resourceCobblestones" value="10"/>
+				<property name="resourceMetalPipe" value="3"/>
+			</property>
+			<drop event="Harvest" name="resourceCobblestones" count="80" tag="allHarvest"/>
+			<drop event="Harvest" name="resourceMetalPipe" count="4" tag="salvageHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="scrapStonePile" count="1" prob="0.75" stick_chance="1"/>
+			<property name="TakeDelay" value="15"/>
+			<!-- Sorting -->
+			<property name="SortOrder1" value="B281"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Group" value="Basics,Food/Cooking,Building,advBuilding"/>
+			<property name="FilterTags" value="MC_playerBlocks,SC_decor"/>
+		</block>
+		
+		<!-- For testing, this rate (in minutes) should be set no lower than 2, def 63.0 -->
+		<!-- <set xpath="/blocks/block[@name='cropsGrowingMaster']/property[@name='PlantFrowing.GrowthRate']/@value">2.0</set> -->
+		<!-- New Plants -->
+
+		<block name="cropsGrowingMasterPZK">
+			<!-- Class -->
+			<property name="CreativeMode" value="None"/>
+			<property name="Class" value="PlantGrowing"/>
+			<property name="PlantGrowing.Next" value="cropsHarvestableMasterPZK"/>
+
+			<!-- For testing, this rate (in minutes) should be set no lower than 2 def 63-->
+			<property name="PlantGrowing.GrowthRate" value="63.0"/> 
+			<property name="PlantGrowing.FertileLevel" value="15"/>
+			<property name="PlantGrowing.IsRandom" value="false"/>
+			<property name="HarvestOverdamage" value="false"/>
+			<!-- UI_Info -->
+			<property name="CustomIcon" value="plantedBlueberry1"/>
+			<property name="DisplayInfo" value="Name"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="DescriptionKey" value="plantedCropsGroupDesc"/>
+			<property name="PickupJournalEntry" value="farmingTip"/>
+			<!-- Visual -->
+			<property name="Material" value="Mplants"/>
+			<property name="Shape" value="BillboardPlant"/>
+			<property name="Mesh" value="grass"/>
+			<property name="Texture" value="395"/>
+			<property name="MultiBlockDim" value="1,2,1"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="LightOpacity" value="0"/>
+			<property name="WaterFlow" value="permitted"/>
+			<!-- Placement -->
+			<property name="OnlySimpleRotations" value="true"/>
+			<property name="Collide" value="melee"/>
+			<property name="IsDecoration" value="true"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="CanDecorateOnSlopes" value="true"/>
+			<!-- Value -->
+			<property name="VehicleHitScale" value=".1"/>
+			<property name="EconomicValue" value="20"/>
+			<!-- Interaction -->
+			<drop event="Destroy" count="0"/>
+			<!-- Sorting -->
+			<property name="SortOrder1" value="M180"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Group" value="Food/Cooking"/>
+			<property name="FilterTags" value="MC_outdoor,SC_crops"/>
+		</block>
+
+		<block name="cropsHarvestableMasterPZK">
+			<property name="CreativeMode" value="None"/>
+			<property name="PlantGrowing.FertileLevel" value="1"/>
+			<property name="HarvestOverdamage" value="false"/>
+			<property name="DisplayInfo" value="Description"/>
+			<property name="DisplayType" value="blockMulti"/>
+			<property name="Material" value="Mplants"/>
+			<property name="Shape" value="BillboardPlant"/>
+			<property name="Mesh" value="grass"/>
+			<property name="Texture" value="395"/>
+			<property name="MultiBlockDim" value="1,2,1"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="LightOpacity" value="0"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="Collide" value="melee"/>
+			<property name="IsTerrainDecoration" value="true"/>
+			<property name="IsDecoration" value="true"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="resourceYuccaFibers" count="0" prob="1" stick_chance="0"/>
+			<property name="SortOrder1" value="M190"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="FilterTags" value="MC_outdoor,SC_crops"/>
+		</block>
+
+		<!-- *** SEEDS_Onion -->
+		<block name="plantedWheet1">
+			<property name="Extends" value="cropsGrowingMasterPZK" param1="CustomIcon"/>
+			<property name="CustomIcon" value="seedPackWheatIcon"/><!-- this was last one i changed-->
+			<property name="CreativeMode" value="Player"/>
+			<property name="PlantGrowing.Next" value="plantedWheet2"/>
+			<property name="UnlockedBy" value="craftingSeeds"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?Plants/PlantSproutPrefab.prefab"/>
+			<property name="PlaceAsRandomRotation" value="true"/>
+			<drop event="Destroy" name="plantedWheet1" count="1"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Group" value="Food/Cooking"/>
+			<property name="Tags" value="seedSkill"/>
+		</block>
+
+		<block name="plantedWheet2">
+			<property name="Extends" value="cropsGrowingMasterPZK"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="PlantGrowing.Next" value="plantedWheet3HarvestPlayer"/>
+			<property name="CustomIcon" value="seedPackWheatIcon"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?Plants/PlantWheetCutPrefab.prefab"/>
+			<drop event="Destroy" name="plantedWheet1" count="1"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0001"/>
+		</block>
+
+		<block name="plantedWheet3Harvest">
+			<property name="Extends" value="cropsHarvestableMasterPZK"/>
+			<property name="CustomIcon" value="seedPackWheatIcon"/><!-- this was last one i changed-->
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?Plants/PlantWheetPrefab.prefab"/>
+			<drop event="Harvest" name="resourceWheetTop" count="1" tag="wildCropsHarvest"/>
+			<drop event="Harvest" name="resourceWheetTop" prob="0.5" count="1" tag="bonusCropHarvest"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0002"/>
+		</block>
+
+		<block name="plantedWheetHarvestRandomHelper">
+			<property name="Extends" value="plantedWheet3Harvest" param1="MultiBlockDim"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="seedPackWheatIcon"/><!-- this was last one i changed-->
+			<property name="CustomIconTint" value="ff8080"/>
+			<property name="ItemTypeIcon" value="other"/>
+			<property name="DescriptionKey" value="plantedCropsRandomHelperGroupDesc"/>
+			<property name="DisplayInfo" value="Name"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0003"/>
+			<property name="FilterTags" value="MC_helpers,SC_helperOutdoor"/>
+		</block>
+
+		<block name="plantedWheet3HarvestPlayer">
+			<property name="Extends" value="plantedWheet3Harvest"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="seedPackWheatIcon"/>
+			<property name="DescriptionKey" value="plantedWheet3HarvestDesc"/>
+			<drop event="Harvest" name="resourceWheetTop" count="2" tag="cropHarvest"/>
+			<drop event="Harvest" name="resourceWheetTop" prob="0.5" count="1" tag="bonusCropHarvest"/>
+			<drop event="Destroy" name="plantedWheet1" count="1" prob="0.5"/>
+			<!-- <property name="DowngradeBlock" value="plantedWheet1"/> -->
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0004"/>
+		</block>
+
+		<!-- *** SEEDS_Onion -->
+		<block name="plantedOnion1">
+			<property name="Extends" value="cropsGrowingMasterPZK" param1="CustomIcon"/>
+			<property name="CustomIcon" value="seedPackOnionIcon"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="PlantGrowing.Next" value="plantedOnion2"/>
+			<property name="UnlockedBy" value="craftingSeeds"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?Plants/PlantSproutPrefab.prefab"/>
+			<property name="PlaceAsRandomRotation" value="true"/>
+			<drop event="Destroy" name="plantedOnion1" count="1"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Group" value="Food/Cooking"/>
+			<property name="Tags" value="seedSkill"/>
+		</block>
+
+		<block name="plantedOnion2">
+			<property name="Extends" value="cropsGrowingMasterPZK"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="PlantGrowing.Next" value="plantedOnion3HarvestPlayer"/>
+			<property name="CustomIcon" value="seedPackOnionIcon"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?Plants/PlantOnionCutPrefab.prefab"/>
+			<drop event="Destroy" name="plantedOnion1" count="1"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0001"/>
+		</block>
+
+		<block name="plantedOnion3Harvest">
+			<property name="Extends" value="cropsHarvestableMasterPZK"/>
+			<property name="CustomIcon" value="seedPackOnionIcon"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?Plants/PlantOnionPrefab.prefab"/>
+			<drop event="Harvest" name="resourceOnionTop" count="1" tag="wildCropsHarvest"/>
+			<drop event="Harvest" name="resourceOnionTop" prob="0.5" count="1" tag="bonusCropHarvest"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0002"/>
+		</block>
+
+		<block name="plantedOnionHarvestRandomHelper">
+			<property name="Extends" value="plantedOnion3Harvest" param1="MultiBlockDim"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="seedPackOnionIcon"/>
+			<property name="CustomIconTint" value="ff8080"/>
+			<property name="ItemTypeIcon" value="other"/>
+			<property name="DescriptionKey" value="plantedCropsRandomHelperGroupDesc"/>
+			<property name="DisplayInfo" value="Name"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0003"/>
+			<property name="FilterTags" value="MC_helpers,SC_helperOutdoor"/>
+		</block>
+
+		<block name="plantedOnion3HarvestPlayer">
+			<property name="Extends" value="plantedOnion3Harvest"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="seedPackOnionIcon"/>
+			<property name="DescriptionKey" value="plantedOnion3HarvestDesc"/>
+			<drop event="Harvest" name="resourceOnionTop" count="2" tag="cropHarvest"/>
+			<drop event="Harvest" name="resourceOnionTop" prob="0.5" count="1" tag="bonusCropHarvest"/>
+			<drop event="Destroy" name="plantedOnion1" count="1" prob="0.5"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0004"/>
+		</block>
+
+
+		<!-- *** SEEDS_Garlic -->
+		<block name="plantedGarlic1">
+			<property name="Extends" value="cropsGrowingMasterPZK" param1="CustomIcon"/>
+			<property name="CustomIcon" value="seedPackGarlicIcon"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="PlantGrowing.Next" value="plantedGarlic2"/>
+			<property name="UnlockedBy" value="craftingSeeds"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?Plants/PlantSproutPrefab.prefab"/>
+			<property name="PlaceAsRandomRotation" value="true"/>
+			<drop event="Destroy" name="plantedGarlic1" count="1"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Group" value="Food/Cooking"/>
+			<property name="Tags" value="seedSkill"/>
+		</block>
+
+		<block name="plantedGarlic2">
+			<property name="Extends" value="cropsGrowingMasterPZK"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="PlantGrowing.Next" value="plantedGarlic3HarvestPlayer"/>
+			<property name="CustomIcon" value="seedPackGarlicIcon"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?Plants/PlantGarlicCutPrefab.prefab"/>
+			<drop event="Destroy" name="plantedGarlic1" count="1"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0001"/>
+		</block>
+
+		<block name="plantedGarlic3Harvest">
+			<property name="Extends" value="cropsHarvestableMasterPZK"/>
+			<property name="CustomIcon" value="seedPackGarlicIcon"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?Plants/PlantGarlicPrefab.prefab"/>
+			<drop event="Harvest" name="resourceGarlic" count="1" tag="wildCropsHarvest"/>
+			<drop event="Harvest" name="resourceGarlic" prob="0.5" count="1" tag="bonusCropHarvest"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0002"/>
+		</block>
+
+		<block name="plantedGarlicHarvestRandomHelper">
+			<property name="Extends" value="plantedGarlic3Harvest" param1="MultiBlockDim"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="seedPackGarlicIcon"/>
+			<property name="CustomIconTint" value="ff8080"/>
+			<property name="ItemTypeIcon" value="other"/>
+			<property name="DescriptionKey" value="plantedCropsRandomHelperGroupDesc"/>
+			<property name="DisplayInfo" value="Name"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0003"/>
+			<property name="FilterTags" value="MC_helpers,SC_helperOutdoor"/>
+		</block>
+
+		<block name="plantedGarlic3HarvestPlayer">
+			<property name="Extends" value="plantedGarlic3Harvest"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="seedPackGarlicIcon"/>
+			<property name="DescriptionKey" value="plantedGarlic3HarvestDesc"/>
+			<drop event="Harvest" name="resourceGarlic" count="2" tag="cropHarvest"/>
+			<drop event="Harvest" name="resourceGarlic" prob="0.5" count="1" tag="bonusCropHarvest"/>
+			<drop event="Destroy" name="plantedGarlic1" count="1" prob="0.5"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0004"/>
+		</block>
+
+		<!-- *** SEEDS_Carrots -->
+		<block name="plantedCarrots1">
+			<property name="Extends" value="cropsGrowingMasterPZK" param1="CustomIcon"/>
+			<property name="CustomIcon" value="seedPackCarrotsIcon"/>
+			<property name="CreativeMode" value="Player"/>
+			<property name="PlantGrowing.Next" value="plantedCarrots2"/>
+			<property name="UnlockedBy" value="craftingSeeds"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?Plants/PlantSproutPrefab.prefab"/>
+			<property name="PlaceAsRandomRotation" value="true"/>
+			<drop event="Destroy" name="plantedCarrots1" count="1"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0000"/>
+			<property name="Group" value="Food/Cooking"/>
+			<property name="Tags" value="seedSkill"/>
+		</block>
+
+		<block name="plantedCarrots2">
+			<property name="Extends" value="cropsGrowingMasterPZK"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="PlantGrowing.Next" value="plantedCarrots3HarvestPlayer"/>
+			<property name="CustomIcon" value="seedPackCarrotsIcon"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?Plants/PlantCarrotsCutPrefab.prefab"/>
+			<drop event="Destroy" name="plantedCarrots1" count="1"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0001"/>
+		</block>
+
+		<block name="plantedCarrots3Harvest">
+			<property name="Extends" value="cropsHarvestableMasterPZK"/>
+			<property name="CustomIcon" value="seedPackCarrotsIcon"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="#@modfolder:Resources/PutzyKitchen.unity3d?Plants/PlantCarrotsPrefab.prefab"/>
+			<drop event="Harvest" name="resourceCarrots" count="1" tag="wildCropsHarvest"/>
+			<drop event="Harvest" name="resourceCarrots" prob="0.5" count="1" tag="bonusCropHarvest"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0002"/>
+		</block>
+
+		<block name="plantedCarrotsHarvestRandomHelper">
+			<property name="Extends" value="plantedCarrots3Harvest" param1="MultiBlockDim"/>
+			<property name="CreativeMode" value="Dev"/>
+			<property name="CustomIcon" value="seedPackCarrotsIcon"/>
+			<property name="CustomIconTint" value="ff8080"/>
+			<property name="ItemTypeIcon" value="other"/>
+			<property name="DescriptionKey" value="plantedCropsRandomHelperGroupDesc"/>
+			<property name="DisplayInfo" value="Name"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0003"/>
+			<property name="FilterTags" value="MC_helpers,SC_helperOutdoor"/>
+		</block>
+
+		<block name="plantedCarrots3HarvestPlayer">
+			<property name="Extends" value="plantedCarrots3Harvest"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="CustomIcon" value="seedPackCarrotsIcon"/>
+			<property name="DescriptionKey" value="plantedCarrots3HarvestDesc"/>
+			<drop event="Harvest" name="resourceCarrots" count="2" tag="cropHarvest"/>
+			<drop event="Harvest" name="resourceCarrots" prob="0.5" count="1" tag="bonusCropHarvest"/>
+			<drop event="Destroy" name="plantedCarrots1" count="1" prob="0.5"/>
+			<property name="SortOrder1" value="B957"/>
+			<property name="SortOrder2" value="0004"/>
+		</block>
+
+	</append>
+		
+</configs>

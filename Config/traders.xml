@@ -1,0 +1,35 @@
+<configs>
+    <append xpath="traders/trader_item_groups/trader_item_group[@name='seeds']"></append>
+
+    <append xpath="traders/trader_item_groups/trader_item_group[@name='cannedfood']"></append>
+
+    <append xpath="traders/trader_item_groups/trader_item_group[@name='foodCandy']"></append>
+
+		<!-- *** Raw_Ingredients -->
+    <append xpath="traders/trader_item_groups/trader_item_group[@name='foodSupplies']">
+        <item name="foodMilledFlour"/>
+		<item name="foodSugar"/>
+    </append>
+
+    <append xpath="traders/trader_item_groups/trader_item_group[@name='preparedFood']"></append>
+
+    <append xpath="traders/trader_item_groups/trader_item_group[@name='groupDrinks']"></append>
+
+    <append xpath="traders/trader_item_groups/trader_item_group[@name='groupDrinksSpecial']"></append>
+
+    <append xpath="traders/trader_item_groups/trader_item_group[@name='tools']">
+        <item name="toolPizzaPeel"/>
+        <item name="toolMeatGrinder"/>
+        <item name="toolRollingPin"/>
+        <item name="toolFlatIron"/>
+        <item name="toolBakingSheet"/>
+        <item name="toolBakingPan"/>
+        <item name="toolMuffinPan"/>
+        <item name="toolPieTin"/>
+    </append>
+
+    <append xpath="traders/trader_item_groups/trader_item_group[@name='workstations']">
+        <item name="CookingStation"/>
+    </append>
+    
+</configs>

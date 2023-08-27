@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	
+	<!-- Replace all recepies using vanilla raw meat to our new Red Meat -->
+	<set xpath="/recipes/recipe[contains(@name, 'food')]/ingredient[@name='foodRawMeat']/@name">foodRawRedMeat</set>
+
+	<!-- ADD FORGE AND WORKBENCH RECIPES TO CRAFT ITEMS -->
+	<append xpath="recipes">
+	
+		<!-- WORKBENCH RECIPES -->
+		
+		<recipe name="CookingStation" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceMetalPipe" count="5"/>
+			<ingredient name="resourceCobblestones" count="50"/>
+		</recipe>
+		
+
+		<recipe name="toolPizzaPeel" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceWood" count="10"/>
+		</recipe>
+
+		<recipe name="toolRollingPin" count="1" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceWood" count="5"/>
+		</recipe>
+
+		<recipe name="toolFlatIron" count="2" craft_area="forge" tags="workbenchCrafting">
+			<ingredient name="resourceScrapIron" count="10"/>
+		</recipe>
+
+		<recipe name="toolBakingSheet" count="2" craft_area="forge" tags="workbenchCrafting">
+			<ingredient name="resourceScrapIron" count="10"/>
+		</recipe>
+
+		<recipe name="toolBakingPan" count="2" craft_area="forge" tags="workbenchCrafting">
+			<ingredient name="resourceScrapIron" count="10"/>
+		</recipe>
+
+		<recipe name="toolMuffinPan" count="2" craft_area="forge" tags="workbenchCrafting">
+			<ingredient name="resourceScrapIron" count="10"/>
+		</recipe>
+		
+		<recipe name="toolPieTin" count="2" craft_area="forge" tags="workbenchCrafting">
+			<ingredient name="resourceScrapIron" count="10"/>
+		</recipe>
+
+		<recipe name="toolMeatGrinder" count="1" craft_area="workbench" tags="learnable,workbenchCrafting">
+			<ingredient name="resourceScrapBrass" count="1"/>
+			<ingredient name="resourceMechanicalParts" count="1"/>
+			<ingredient name="resourceScrapIron" count="10"/>
+		</recipe>
+
+		<recipe name="ClayBowlEmpty" count="1">
+			<ingredient name="resourceClayLump" count="10"/>
+		</recipe>
+
+		<recipe name="ClayBowlEmpty" count="2" craft_area="forge" tags="workbenchCrafting">
+			<ingredient name="unit_clay" count="5"/>
+			<ingredient name="unit_glass" count="5"/>
+		</recipe>
+	</append>
+	
+</configs>

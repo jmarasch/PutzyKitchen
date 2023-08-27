@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	
+	<!-- ADD ITEMS TO WORKSTATION SKILLS -->
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/display_entry[2]/unlock_entry[@unlock_tier='1']/@item">,CookingStation</append>
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/display_entry[2]/unlock_entry[@unlock_tier='2']/@item">,toolPizzaPeel,toolRollingPin</append>
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/display_entry[2]/unlock_entry[@unlock_tier='3']/@item">,toolFlatIron,toolBakingSheet,toolBakingPan,toolMuffinPan,toolPieTin</append>
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']/display_entry[2]/unlock_entry[@unlock_tier='4']/@item">,toolMeatGrinder</append>
+	<append xpath="/progression/crafting_skills/crafting_skill[@name='craftingWorkstations']">
+		<effect_group>
+			
+			<passive_effect name="CraftingTier" operation="base_add" level="10,100" value="1" tags="CookingStation" />
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="10,100" value="1" tags="CookingStation" />
+
+			<passive_effect name="CraftingTier" operation="base_add" level="15,100" value="1" tags="toolPizzaPeel" />
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="15,100" value="1" tags="toolPizzaPeel" />
+			
+			<passive_effect name="CraftingTier" operation="base_add" level="15,100" value="1" tags="toolRollingPin" />
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="15,100" value="1" tags="toolRollingPin" />
+
+			<passive_effect name="CraftingTier" operation="base_add" level="20,100" value="1" tags="toolFlatIron,toolBakingSheet,toolBakingPan,toolMuffinPan,toolPieTin" />
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="20,100" value="1" tags="toolFlatIron,toolBakingSheet,toolBakingPan,toolMuffinPan,toolPieTin" />
+			
+			<passive_effect name="CraftingTier" operation="base_add" level="25,100" value="1" tags="toolMeatGrinder" />
+			<passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="toolMeatGrinder" />
+		</effect_group>
+	</append>
+</configs>

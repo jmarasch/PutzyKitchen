@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+    <Name value="PutzyKitchen" />
+	<DisplayName value="Putzy Kitchen" />
+    <Description value="Recpies and other stuff for expanding your Cooking in the kitchen" />
+    <Version value="21.0.0" />
+    <Author value="Popples"/>
+    <Website value="" /> 
+</xml>

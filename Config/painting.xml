@@ -1,0 +1,32 @@
+<!-- ID: can only be 0-255, name = localization key, ID 0 is the "delete" entry. Do not re-use 0. -->
+<!-- TextureId: this matches <property name="Texture" /> -->
+<!-- Group: to organize textures on the paint tool menu, this is also the localization key of the group -->
+<!-- PaintCost: default=1
+
+Used Groups:
+	Decorations
+	Faux
+	Masonry
+	Metal
+	Painted
+	Wall Coverings
+	Wood and Roofing
+
+1 txGroupDecoration
+2 txGroupFaux
+2 txGroupMasonry
+3 txGroupMetal
+1 txGroupPainted
+2 txGroupWallCovering
+1 txGroupWood
+
+-->
+<config>
+    <append xpath="/paints">
+		<!-- <paint id="1" name="txName_Brick">
+			<property name="TextureId" value="7"/>
+			<property name="Group" value="txGroupFaux"/>
+			<property name="PaintCost" value="1" />
+		</paint> -->
+	</append>
+</config>
